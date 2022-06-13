@@ -18,7 +18,7 @@ class Admin(commands.Cog):
     async def rules(self, ctx):
         rulesChannel = self.client.get_channel(926321641162678322)
         embed = discord.Embed(
-            title = "Discord general rules",
+            title = "Discord General Rules",
             colour = self.config.mainColor,
             description = "Every player from our community should understand our rules to be able to play on the server otherwise you'll be punished.\n\n1. We do not tolerate toxic behavior in our community.\n2. You cannot post sexual content on any channel.\n3. You cannot post racist content, regardless of the subject.\n4. You cannot request any roles from any administrators.\n5. You cannot publish any personal pieces of information, even if it's your information or that of other players. (names, addresses, e-mails, password, bank account, cards, or any other thing that can affect somebody).\n6. You cannot spam on any channel, even if it is a bot command.\n7. You cannot send messages about other communities.",
         )
@@ -32,7 +32,7 @@ class Admin(commands.Cog):
         embed = discord.Embed(
             title = "Server Overview",
             colour = self.config.mainColor,
-            description = "As you know, we want to keep you all up to date with all the pieces of information about the server so here you have some useful links that might help you.\n\nTime Zone: **Eastern European Standard Time (GMT+2)**\n\nWebsite: https://website.to/\nDiscord: https://website.to/discord\nDownloads: https://website.to/downloads",
+            description = "As you know, we want to keep you all up to date with all the pieces of information about the server so here you have some useful links that might help you.\n\nTime Zone: **Eastern European Standard Time (GMT+2)**\n\nWebsite: https://koa2.ro/\nDiscord: https://koa2.ro/discord\nDownloads: https://koa2.ro/downloads",
         )
         embed.set_footer(text=self.config.embedCopyright)
         await overviewChannel.send(embed=embed)
@@ -59,6 +59,10 @@ class Admin(commands.Cog):
     async def clear(self, ctx, amount : int):
         await ctx.channel.purge(limit=amount)
         await ctx.send(ctx.author.mention + ' deleted %s messages!' % amount, delete_after=2)
+
+    @commands.slash_command(name="clear")
+    async def clearSlash(self, ctx):
+        await ctx.send('test')
 
     @commands.command()
     @has_permissions(administrator=True)

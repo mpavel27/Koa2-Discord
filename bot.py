@@ -11,7 +11,7 @@ intents = discord.Intents().all()
 client  = commands.Bot(command_prefix = config["COMMAND_PREFIX"], intents=intents)
 Datas = []
 mainColor = 0x5865f2
-embedCopyright = "2022 © www.website.to"
+embedCopyright = "2022 © www.koa2.ro"
 client.invites = {}
 client.data = {}
 

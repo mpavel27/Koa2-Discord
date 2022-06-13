@@ -32,7 +32,6 @@ class Commands(commands.Cog):
         profile_image = await load_image_async(str(avatarLink))
         profile = Editor(profile_image).resize((200, 200)).circle_image()
 
-
         font_40 = Font.poppins(size=40)
         font_20 = Font.montserrat(size=20)
         font_15 = Font.montserrat(size=15)
@@ -52,6 +51,7 @@ class Commands(commands.Cog):
         background.text((310, 190), user_data["role"] , font=font_25, color=str(target.top_role.color))
 
         file = File(fp=background.image_bytes, filename='stats.png')
+        print(file)
         await ctx.send(file=file)
 
 def setup(client):
