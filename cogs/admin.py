@@ -57,7 +57,7 @@ class Admin(commands.Cog):
     @commands.command()
     @has_permissions(administrator=True)
     async def language_role(self, ctx):
-        languages = self.config.languages
+        languages = ['flag_gb', 'flag_ro']
         embed = discord.Embed(
             title = "Choose Your Language",
             colour = self.config.mainColor,
