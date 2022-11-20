@@ -68,6 +68,7 @@ class Admin(commands.Cog):
         message = await ctx.send(embed=embed)
 
         for language in languages:
+            print(language)
             await message.add_reaction(language)
 
     @commands.command()
