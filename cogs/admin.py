@@ -63,7 +63,7 @@ class Admin(commands.Cog):
             description = "If you want to see the chat rooms and some other important information, please choose your language.\n**We are sorry if you don't find your native language.**",
             # set_image = 'https://i.imgur.com/yhJwZD9.png'
         )
-        embed.set_image('https://i.imgur.com/yhJwZD9.png')
+        embed.set_image(url='https://i.imgur.com/yhJwZD9.png')
         await ctx.send(embed=embed)
 
     @commands.command()
