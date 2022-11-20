@@ -61,7 +61,7 @@ class Admin(commands.Cog):
             title = "Choose Your Language",
             colour = self.config.mainColor,
             description = "If you want to see the chat rooms and some other important information, please choose your language.\n**We are sorry if you don't find your native language.**",
-            image = 'https://i.imgur.com/yhJwZD9.png'
+            set_image = 'https://i.imgur.com/yhJwZD9.png'
         )
         await ctx.send(embed=embed)
 
