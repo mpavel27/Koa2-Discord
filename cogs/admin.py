@@ -54,6 +54,17 @@ class Admin(commands.Cog):
     async def questions(ctx):
         await ctx.send("Because we want to be as much transparent as we can, you can ask us any questions about the server on this channel. This channel have 30 seconds slowmode so make sure that your question is understandable.")
 
+    @commands.command(hidden=True)
+    @has_permissions(administrator=True)
+    async def language_role(ctx):
+        embed = discord.Embed(
+            title = "Choose Your Language",
+            colour = self.config.mainColor,
+            description = "If you want to see the chat rooms and some other important information, please choose your language.\n**We are sorry if you don't find your native language.**",
+            image = 'https://i.imgur.com/yhJwZD9.png'
+        )
+        await ctx.send(embed=embed)
+
     @commands.command()
     @has_permissions(administrator=True)
     async def clear(self, ctx, amount : int):
