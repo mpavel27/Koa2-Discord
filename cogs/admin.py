@@ -67,9 +67,11 @@ class Admin(commands.Cog):
         embed.set_image(url='https://i.imgur.com/9u3PTgU.png')
         message = await ctx.send(embed=embed)
 
-        for language in languages:
-            print(language)
-            await message.add_reaction(language)
+        message.add_reaction('slight_smile')
+
+        # for language in languages:
+        #     print(language)
+        #     await message.add_reaction(language)
 
     @commands.command()
     @has_permissions(administrator=True)
