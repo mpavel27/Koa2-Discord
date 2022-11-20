@@ -60,10 +60,10 @@ class Admin(commands.Cog):
         embed = discord.Embed(
             title = "Choose Your Language",
             colour = self.config.mainColor,
-            description = "If you want to see the chat rooms and some other important information, please choose your language.\n**We are sorry if you don't find your native language.**",
+            description = "If you want to see the chat rooms and some other important information, please choose your language.\n\n**We are sorry if you don't find your native language.**",
             # set_image = 'https://i.imgur.com/yhJwZD9.png'
         )
-        embed.set_image(url='https://i.imgur.com/yhJwZD9.png')
+        embed.set_image(url='https://i.imgur.com/9u3PTgU.png')
         await ctx.send(embed=embed)
 
     @commands.command()
