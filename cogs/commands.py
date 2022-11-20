@@ -50,9 +50,9 @@ class Commands(commands.Cog):
         background.text((240, 190), "Role:", font=font_25, color="white")
         background.text((310, 190), user_data["role"] , font=font_25, color=str(target.top_role.color))
 
-        file = File(fp=background.image_bytes, filename='stats.png')
-        print(file)
-        await ctx.send(file)
+        sendFile = File(fp=background.image_bytes, filename='stats.png')
+        print(sendFile)
+        await ctx.send(file=sendFile)
 
 def setup(client):
     client.add_cog(Commands(client, Config()))
