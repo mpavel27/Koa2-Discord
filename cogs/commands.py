@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 from cogs.invite import Invite
 
-from nextcord import File # pip install nextcord
+from discord import File
 from easy_pil import Canvas, Editor, Font, load_image_async # pip install easy-pil
 
 from config import Config
