@@ -60,10 +60,6 @@ class Admin(commands.Cog):
         await ctx.channel.purge(limit=amount)
         await ctx.send(ctx.author.mention + ' deleted %s messages!' % amount, delete_after=2)
 
-    @commands.slash_command(name="clear")
-    async def clearSlash(self, ctx):
-        await ctx.send('test')
-
     @commands.command()
     @has_permissions(administrator=True)
     async def custom_embed(self, ctx, *args):

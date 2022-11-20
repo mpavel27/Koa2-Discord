@@ -52,7 +52,7 @@ class Commands(commands.Cog):
 
         file = File(fp=background.image_bytes, filename='stats.png')
         print(file)
-        await ctx.send(file=file)
+        await ctx.send(file=File(fp=background.image_bytes, filename='stats.png'))
 
 def setup(client):
     client.add_cog(Commands(client, Config()))
