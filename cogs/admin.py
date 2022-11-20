@@ -57,6 +57,7 @@ class Admin(commands.Cog):
     @commands.command()
     @has_permissions(administrator=True)
     async def language_role(self, ctx):
+        languages = self.config.languages
         embed = discord.Embed(
             title = "Choose Your Language",
             colour = self.config.mainColor,
@@ -64,7 +65,10 @@ class Admin(commands.Cog):
             # set_image = 'https://i.imgur.com/yhJwZD9.png'
         )
         embed.set_image(url='https://i.imgur.com/9u3PTgU.png')
-        await ctx.send(embed=embed)
+        message = await ctx.send(embed=embed)
+
+        for language in languages:
+            await message.add_reaction(language)
 
     @commands.command()
     @has_permissions(administrator=True)
