@@ -54,7 +54,7 @@ class Admin(commands.Cog):
     async def questions(ctx):
         await ctx.send("Because we want to be as much transparent as we can, you can ask us any questions about the server on this channel. This channel have 30 seconds slowmode so make sure that your question is understandable.")
 
-    @commands.command(hidden=True)
+    @commands.command()
     @has_permissions(administrator=True)
     async def language_role(ctx):
         embed = discord.Embed(
