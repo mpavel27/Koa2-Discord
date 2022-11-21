@@ -43,7 +43,7 @@ class events(commands.Cog):
 
     @commands.Cog.listener()
     async def on_reaction_add(self, reaction, user):
-        # print(reaction.message.id)
+        print(reaction.message.id)
         if(reaction.message.id != 1044046154742116364):
             return
         print(reaction.emoji)
