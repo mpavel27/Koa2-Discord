@@ -42,22 +42,44 @@ class events(commands.Cog):
         await Invite(self.client, self.config).updateLeaderboard()
 
     @commands.Cog.listener()
-    async def on_reaction_add(self, reaction, user):
-        message = client.get_message('1044046154742116364')
-        print(message)
-        print(reaction.message.id)
-        # if(reaction.message.id != 1044046154742116364):
-        #     return
-        # print(reaction.emoji)
-    #     print(reaction.message.channel.id)
-    #     # if reaction.message.channel.id != '1044009870497677434':
-    #     #     return
-    #     # if reaction.emoji == '🇬🇧':
-    #     #     await client.add_roles(user, '1044003678329258004')
-    #     #     print('role gb adaugat')
-    #     # elif reaction.emoji == '🇷🇴':
-    #     #     await client.add_roles(user, '1044003742116229211')
-    #     #     print('role ro adaugat')
+    async def on_raw_reaction_add(self, payload):
+        user = self.client.guilds[0].get_member(payload.user_id)
+        reaction = payload.emoji
+        if payload.message_id == 1044228129155186719:
+            if reaction.name == '🇬🇧':
+                print('engleza')
+                role = self.client.guilds[0].get_role(1044003678329258004)
+                await user.add_roles(role)
+                embed = discord.Embed(
+                    title = "Thank you for choosing your language!",
+                    colour = self.config.mainColor,
+                    description = f"Hello {user.name}!\n\nThank you for choosing your language.\n\nWe are sorry if you couldn't find your native language."
+                )
+                embed.set_image(url='https://i.imgur.com/9u3PTgU.png')
+                await user.send(embed=embed)
+            elif reaction.name == '🇷🇴':
+                print('romana')
+                role = self.client.guilds[0].get_role(1044003742116229211)
+                await user.add_roles(role)
+                embed = discord.Embed(
+                    title = "Thank you for choosing your language!",
+                    colour = self.config.mainColor,
+                    description = f"Hello {user.name}!\n\nThank you for choosing your language.\n\nWe are sorry if you couldn't find your native language."
+                )
+                embed.set_image(url='https://i.imgur.com/9u3PTgU.png')
+                await user.send(embed=embed)
+
+    @commands.Cog.listener()
+    async def on_raw_reaction_remove(self, payload):
+        user = self.client.guilds[0].get_member(payload.user_id)
+        reaction = payload.emoji
+        if payload.message_id == 1044228129155186719:
+            if reaction.name == '🇬🇧':
+                role = self.client.guilds[0].get_role(1044003678329258004)
+                await user.remove_roles(role)
+            elif reaction.name == '🇷🇴':
+                role = self.client.guilds[0].get_role(1044003742116229211)
+                await user.remove_roles(role)
         
 
 def setup(client):
