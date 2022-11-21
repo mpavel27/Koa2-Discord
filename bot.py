@@ -26,6 +26,11 @@ async def on_ready():
     #test = [["","","","","",""]]
     Datas.insert(0,[client.user.name, '{0.major}.{0.minor}.{0.micro}-{0.releaselevel}'.format(discord.version_info),platform.python_version(),platform.platform(),"Discord","✅"])
     print(tabulate(Datas, headers, tablefmt="grid"))
+
+    message = client.get_message('1044009870497677434')
+    while True:
+        reaction = await client.wait_for_reaction(message=message)
+        print(reaction)
     
 for filename in os.listdir("./cogs"):
     if filename.endswith('.py'):
