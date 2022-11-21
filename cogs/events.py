@@ -43,7 +43,7 @@ class events(commands.Cog):
 
     @commands.Cog.listener()
     async def on_reaction_add(self, reaction, user):
-        print(user)
+        print(reaction.message.id)
     #     print(reaction.message.channel.id)
     #     # if reaction.message.channel.id != '1044009870497677434':
     #     #     return
