@@ -67,7 +67,7 @@ class Admin(commands.Cog):
         embed.set_image(url='https://i.imgur.com/9u3PTgU.png')
         message = await ctx.send(embed=embed)
 
-        await message.add_reaction(':slight_smile:')
+        await message.add_reaction('🇷🇴')
 
         # for language in languages:
         #     print(language)
