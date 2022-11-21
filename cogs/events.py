@@ -43,14 +43,15 @@ class events(commands.Cog):
 
     @commands.Cog.listener()
     async def on_reaction_add(reaction, user):
-        if reaction.message.channel.id != '1044009870497677434':
-            return
-        if reaction.emoji == '🇬🇧':
-            await client.add_roles(user, '1044003678329258004')
-            print('role gb adaugat')
-        elif reaction.emoji == '🇷🇴':
-            await client.add_roles(user, '1044003742116229211')
-            print('role ro adaugat')
+        print(reaction.message.channel.id)
+        # if reaction.message.channel.id != '1044009870497677434':
+        #     return
+        # if reaction.emoji == '🇬🇧':
+        #     await client.add_roles(user, '1044003678329258004')
+        #     print('role gb adaugat')
+        # elif reaction.emoji == '🇷🇴':
+        #     await client.add_roles(user, '1044003742116229211')
+        #     print('role ro adaugat')
         
 
 def setup(client):
