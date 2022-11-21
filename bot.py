@@ -29,7 +29,7 @@ async def on_ready():
 
     message = client.get_message('1044009870497677434')
     while True:
-        reaction = await client.wait_for_reaction(message=message)
+        reaction = await client.wait_for_reaction(emoji="🇷🇴", message=message)
         print(reaction)
     
 for filename in os.listdir("./cogs"):
