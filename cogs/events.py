@@ -41,8 +41,9 @@ class events(commands.Cog):
                 file.write(json.dumps(self.client.invites))
         await Invite(self.client, self.config).updateLeaderboard()
 
-    # @commands.Cog.listener()
-    # async def on_reaction_add(self, reaction, user):
+    @commands.Cog.listener()
+    async def on_reaction_add(self, reaction, user):
+        print(user)
     #     print(reaction.message.channel.id)
     #     # if reaction.message.channel.id != '1044009870497677434':
     #     #     return
