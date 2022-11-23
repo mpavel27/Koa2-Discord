@@ -28,7 +28,7 @@ class Admin(commands.Cog):
     @commands.command(hidden=True)
     @has_permissions(administrator=True)
     async def regulament(self, ctx):
-        rulesChannel = self.client.get_channel(926321641162678322)
+        rulesChannel = self.client.get_channel(1045022262874624185)
         embed = discord.Embed(
             title = "Regulament General",
             colour = self.config.mainColor,
