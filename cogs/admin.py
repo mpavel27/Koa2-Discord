@@ -51,6 +51,18 @@ class Admin(commands.Cog):
 
     @commands.command(hidden=True)
     @has_permissions(administrator=True)
+    async def overview_ro(self, ctx):
+        overviewChannel = self.client.get_channel(1045022355535175790)
+        embed = discord.Embed(
+            title = "Server Overview",
+            colour = self.config.mainColor,
+            description = "Dupa cum stiti, dorim sa va tinem pe toti la curent cu toate informatiile despre server, asa ca aici aveti cateva link-uri utile care v-ar putea ajuta.\n\nTime Zone: **Eastern European Standard Time (GMT+2)**\n\nWebsite: https://koa2.ro/\nDiscord: https://koa2.ro/discord\nDownloads: https://koa2.ro/downloads",
+        )
+        embed.set_footer(text=self.config.embedCopyright)
+        await overviewChannel.send(embed=embed)
+
+    @commands.command(hidden=True)
+    @has_permissions(administrator=True)
     async def faq(self, ctx):
         overviewChannel = self.client.get_channel(926650411761410068)
         embed = discord.Embed(
