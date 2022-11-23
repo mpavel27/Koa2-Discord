@@ -76,7 +76,7 @@ class Admin(commands.Cog):
     @commands.command(hidden=True)
     @has_permissions(administrator=True)
     async def faq_ro(self, ctx):
-        overviewChannel = self.client.get_channel(926650411761410068)
+        overviewChannel = self.client.get_channel(1045022431624052797)
         embed = discord.Embed(
             title = "Frequently Asked Questions",
             colour = self.config.mainColor,
