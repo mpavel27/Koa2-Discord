@@ -75,6 +75,18 @@ class Admin(commands.Cog):
 
     @commands.command(hidden=True)
     @has_permissions(administrator=True)
+    async def faq_ro(self, ctx):
+        overviewChannel = self.client.get_channel(926650411761410068)
+        embed = discord.Embed(
+            title = "Frequently Asked Questions",
+            colour = self.config.mainColor,
+            description = "Cei mai multi dintre voi ar putea avea diferite intrebari despre server, iar aici avem cele mai intrebare intrebari.\n\n**1. Este serverul un proiect international?**\n— Da, dar momentan incercam sa adunam cat mai multe persoane in staff incat sa ne putem ocupa de toate sectiuniile pentru limba aferenta.\n\n**2. De ce nu avem un canal specific pentru fiecare nationalitate in parte?**\n— In acest moment, nu avem atat de multe persoane in staff incat sa ne putem ocupa de toate sectiuniile asa ca momentan o sa avem doar limba romana pe server.\n\n**3. Vom avea sistem de multi-language pe server?**\n— Bineinteles, dar momentan o sa ne ocupam mai mult de sectiuniile in limba romana .\n\n**4. Cand se va deschide serverul?**\n— Momentan nu avem o data stabilita pentru deschiderea serverului asa ca va rugam sa asteptati pana cand o sa anuntam pe canalul nostru de anunturi.\n\n**5. Cum putem ajuta?**\n— Pentru cei ce vor sa ne ajuta in orice mod de dezvoltare a serverului va rugam sa contactati un Administrator.\n\n**6. Unde putem sa vedem progresul serverului?**\n— Incercam din toate puteriile sa va tinem la curent cu tot ce se petrece cu serverului pe canalul de sneak-peaks.\n\n**7. Care este stadiul actual al serverlui?**\n— In prezent, lucram la server si progresam in fiecare zi.\n\n**8. What will be the maximum level on the server?**\n— Nivelul maxim pe server o sa fie 120.",
+        )
+        embed.set_footer(text=self.config.embedCopyright)
+        await overviewChannel.send(embed=embed)
+
+    @commands.command(hidden=True)
+    @has_permissions(administrator=True)
     async def questions(self, ctx):
         await ctx.send("Because we want to be as much transparent as we can, you can ask us any questions about the server on this channel. This channel have 30 seconds slowmode so make sure that your question is understandable.")
 
