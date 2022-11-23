@@ -25,6 +25,16 @@ class Admin(commands.Cog):
         embed.set_footer(text=self.config.embedCopyright)
         await rulesChannel.send(embed=embed)
 
+    async def regulament(self, ctx):
+        rulesChannel = self.client.get_channel(926321641162678322)
+        embed = discord.Embed(
+            title = "Regulament General",
+            colour = self.config.mainColor,
+            description = "Fiecare jucator din comunitatea noastra ar trebui sa inteleaga regulamentul nostru pentru a putea juca pe server.\n\n1. Nu toleram comportamente toxice in comunitatea noastra.\n2. Nu puteti posta continut sexual pe niciun canal.\n3. Nu puteti posta continut rasist, indiferent de subiect.\n4. Nu puteti solicita niciun rol de la niciun administrator.\n5. Nu puteti publica informatii personale, chiar daca sunt informatiile tale sau ale altor jucatori. (nume, adresa, e-mail, parole, conturi bancare, carduri sau orice alt lucru care poate afecta pe cineva)\n6. Nu puteti face spam pe nici un canal, chiar daca este o comanda de la orice bot.\n7. Nu puteti trimite mesaje despre alte comunitati.",
+        )
+        embed.set_footer(text=self.config.embedCopyright)
+        await rulesChannel.send(embed=embed)
+
     @commands.command(hidden=True)
     @has_permissions(administrator=True)
     async def overview(self, ctx):
