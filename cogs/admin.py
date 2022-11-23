@@ -25,6 +25,8 @@ class Admin(commands.Cog):
         embed.set_footer(text=self.config.embedCopyright)
         await rulesChannel.send(embed=embed)
 
+    @commands.command(hidden=True)
+    @has_permissions(administrator=True)
     async def regulament(self, ctx):
         rulesChannel = self.client.get_channel(926321641162678322)
         embed = discord.Embed(
